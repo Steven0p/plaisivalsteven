@@ -1,0 +1,115 @@
+/*
+  Chak paj sit la gen pwòp idantite vizyèl li (tèm), pilote pa yon
+  atribi `data-theme` mete sou <html> nan Layout.jsx. Varyab CSS yo
+  chanje, men estrikti (Tailwind) rete menm jan an — sa fè 4 "mond"
+  vizyèl diferan pou menm sit la, san 4 kodbaz separe.
+*/
+
+:root {
+  --bg: #0b0b0c;
+  --surface: #141416;
+  --surface-2: #1c1c1f;
+  --ink: #f5f2ea;
+  --ink-muted: #a8a29a;
+  --accent: #e8a33d;
+  --accent-ink: #0b0b0c;
+  --border: #26262a;
+  --radius: 0px;
+  --font-display: 'Fraunces', ui-serif, serif;
+  --font-body: 'Plus Jakarta Sans', ui-sans-serif, sans-serif;
+}
+
+/* ---- Akèy — Editorial Dark Mono ---- */
+[data-theme='editorial'] {
+  --bg: #0b0b0c;
+  --surface: #141416;
+  --surface-2: #1c1c1f;
+  --ink: #f5f2ea;
+  --ink-muted: #a8a29a;
+  --accent: #e8a33d;
+  --accent-ink: #0b0b0c;
+  --border: #2a2a2e;
+  --radius: 2px;
+  --font-display: 'Fraunces', ui-serif, serif;
+  --font-body: 'Plus Jakarta Sans', ui-sans-serif, sans-serif;
+}
+
+/* ---- Pwojè — Terminal / Systems Engineer ---- */
+[data-theme='terminal'] {
+  --bg: #08090a;
+  --surface: #0f1210;
+  --surface-2: #141917;
+  --ink: #d9f5e0;
+  --ink-muted: #5f8f6c;
+  --accent: #39ff88;
+  --accent-ink: #061006;
+  --border: #1d2a1f;
+  --radius: 0px;
+  --font-display: 'JetBrains Mono', ui-monospace, monospace;
+  --font-body: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* ---- Sou Mwen — Ayiti Modern ---- */
+[data-theme='ayiti'] {
+  --bg: #12122b;
+  --surface: #191a3a;
+  --surface-2: #212259;
+  --ink: #f4ece2;
+  --ink-muted: #b7aed0;
+  --accent: #d97b4f;
+  --accent-ink: #12122b;
+  --border: #2b2c58;
+  --radius: 6px;
+  --font-display: 'Unbounded', ui-sans-serif, sans-serif;
+  --font-body: 'Plus Jakarta Sans', ui-sans-serif, sans-serif;
+}
+
+/* ---- Kontak — Minimal Brutalist ---- */
+[data-theme='brutalist'] {
+  --bg: #f5f4f0;
+  --surface: #ffffff;
+  --surface-2: #ececE6;
+  --ink: #0a0a0a;
+  --ink-muted: #4a4a4a;
+  --accent: #ff3d1a;
+  --accent-ink: #ffffff;
+  --border: #0a0a0a;
+  --radius: 0px;
+  --font-display: 'Archivo Black', ui-sans-serif, sans-serif;
+  --font-body: 'Space Grotesk', ui-sans-serif, sans-serif;
+}
+
+html {
+  background: var(--bg);
+  color-scheme: dark;
+}
+
+[data-theme='brutalist'] {
+  color-scheme: light;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  transition: background-color 420ms ease, color 420ms ease;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.tk-bg { background-color: var(--bg); }
+.tk-surface { background-color: var(--surface); }
+.tk-surface-2 { background-color: var(--surface-2); }
+.tk-ink { color: var(--ink); }
+.tk-ink-muted { color: var(--ink-muted); }
+.tk-accent { color: var(--accent); }
+.tk-accent-bg { background-color: var(--accent); color: var(--accent-ink); }
+.tk-border { border-color: var(--border); }
+.tk-radius { border-radius: var(--radius); }
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
