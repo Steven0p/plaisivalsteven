@@ -1,5 +1,6 @@
 import { useLanguage } from '../i18n/LanguageContext';
 import useFetch from '../hooks/useFetch';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import { getProjects } from '../services/projectService';
 import { Loader, ErrorMessage, EmptyMessage } from '../components/ui/StateViews';
 
@@ -72,6 +73,7 @@ function ProjectCard({ project }) {
 
 export default function Projects() {
   const { t } = useLanguage();
+  useDocumentTitle(`${t('projects.title')} — Steven Plaisival`);
   const { data: projects, loading, error } = useFetch(() => getProjects(), []);
 
   return (

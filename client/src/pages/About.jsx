@@ -1,6 +1,7 @@
 import { useLanguage } from '../i18n/LanguageContext';
 import { useProfile } from '../context/ProfileContext';
 import useFetch from '../hooks/useFetch';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import { getSkills } from '../services/skillService';
 import { getExperiences } from '../services/experienceService';
 import { Loader, EmptyMessage } from '../components/ui/StateViews';
@@ -46,6 +47,7 @@ function formatDate(value, presentLabel) {
 
 export default function About() {
   const { t } = useLanguage();
+  useDocumentTitle(`${t('about.title')} — Steven Plaisival`);
   const { profile } = useProfile();
   const { data: skills, loading: skillsLoading } = useFetch(() => getSkills().catch(() => []), []);
   const { data: experiences, loading: expLoading } = useFetch(

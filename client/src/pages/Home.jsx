@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 import { useProfile } from '../context/ProfileContext';
 import useFetch from '../hooks/useFetch';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import { getProjects } from '../services/projectService';
 import { Loader } from '../components/ui/StateViews';
 
@@ -26,6 +27,9 @@ function ProjectRow({ project, index }) {
 export default function Home() {
   const { t } = useLanguage();
   const { profile, loading: profileLoading } = useProfile();
+  useDocumentTitle(
+    profile?.full_name ? `${profile.full_name} — ${profile.title || t('home.untitledRole')}` : t('home.placeholderName')
+  );
   const { data: projects, loading: projectsLoading } = useFetch(
     () => getProjects().catch(() => []),
     []

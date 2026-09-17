@@ -5,6 +5,7 @@ import { useProfile } from '../context/ProfileContext';
 import { sendContactMessage } from '../services/contactService';
 import { getSocials } from '../services/socialService';
 import useFetch from '../hooks/useFetch';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 
 function Field({ label, error, children }) {
   return (
@@ -53,6 +54,7 @@ const inputClass =
 
 export default function Contact() {
   const { t } = useLanguage();
+  useDocumentTitle(`${t('contact.title')} — Steven Plaisival`);
   const { profile } = useProfile();
   const { data: socials } = useFetch(() => getSocials().catch(() => []), []);
   const [status, setStatus] = useState(null);
