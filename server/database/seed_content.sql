@@ -9,7 +9,7 @@ VALUES (
   'Devlopè Full-Stack · Fotograf',
   'Devlopè Full-Stack ki baze an Ayiti, ap etidye nan Université Roi Henri Christophe (URHC). Mwen bati aplikasyon web konplè pou kontèks ayisyen — pòtay inivèsitè, sistèm jesyon memwa ak soutnans — ak React, Node.js, PHP ak MySQL, ak yon atansyon patikilye sou sekirite (requêtes preparees, CSRF, kontwòl aksè pa wòl). Mwen pasyone tou pou fotografi.',
   'https://avatars.githubusercontent.com/u/222989476?v=4',
-  'plaisivalsteven8@gmail.com',
+  'plaisivalsteven@gmail.com',
   NULL,
   'Ayiti',
   NULL
